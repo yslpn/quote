@@ -6,9 +6,15 @@ h1 {
     color: #1946ba;
 }
 
+div {
+    max-width: 960px;
+    padding: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
 blockquote {
     font-size: 20px;
-    max-width: 960px;
 }
 
 button {
