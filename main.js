@@ -1,11 +1,12 @@
 'use strict';
 
-let el = document.getElementById('quote');
+const el = document.getElementsByTagName('blockquote');
+const b = document.querySelectorAll('button');
 let i = 0;
 
-function change() {
+b[0].addEventListener('click', function change() {
     fetch('https://raw.githubusercontent.com/4skinSkywalker/Database-Quotes-JSON/master/quotes.json')
-        .then(x => x.json())
-        .then((data) => el.textContent = '"' + data[i].quoteText + '"' + ' - ' + data[i].quoteAuthor)
+        .then( x => x.json())
+        .then( ( data ) => el[0].textContent = '"' + data[i].quoteText + '"'+ ' - ' + data[i].quoteAuthor)
     i++;
-};
+});
