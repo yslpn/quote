@@ -23,9 +23,7 @@ blockquote {
 button {
     background-color: #ec0b43;
     color: white;
-    border: none;
     padding: 10px 30px;
-    text-align: center;
     font-size: 16px;
     border-radius: 15px;
 }
