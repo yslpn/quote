@@ -8,9 +8,9 @@ h1 {
 
 div {
     max-width: 960px;
-    min-height: 200px;
+    min-height: 250px;
     padding: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-left: 20px;
 }
 
@@ -27,3 +27,13 @@ button {
     font-size: 16px;
     border-radius: 15px;
 }
+
+p {
+    text-decoration: none;
+    color: #1946ba;
+}
+
+p:hover {
+    text-decoration: underline;
+    color: #1946ba;
+} 
