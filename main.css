@@ -34,6 +34,7 @@ p {
 }
 
 p:hover {
+    cursor: pointer;
     text-decoration: underline;
     color: #1946ba;
 } 
