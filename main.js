@@ -4,7 +4,7 @@ const el = document.getElementsByTagName('blockquote');
 const a = document.getElementsByTagName('p');
 const b = document.getElementsByTagName('button');
 const quoteJSON = (() => {
-    return fetch('https://raw.githubusercontent.com/4skinSkywalker/Database-Quotes-JSON/master/quotes.json')
+    return fetch('/quotes.json')
         .then(x => x.json());
 })();
 
