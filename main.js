@@ -17,12 +17,12 @@ const changeQuote = () => {
         indexAuthorList = 0;
     })
 };
-
 changeQuote();
 
 b[0].addEventListener('click', () => changeQuote());
 
 let indexAuthorList = 0;
+
 a[0].addEventListener('click', () => {
     quoteJSON.then((data) => {
         for (let z = indexAuthorList; z < data.length; z++) {
