@@ -1,8 +1,9 @@
 'use strict';
 
-const el = document.getElementsByTagName('blockquote');
-const a = document.getElementsByTagName('h2');
-const b = document.getElementsByTagName('button');
+const quote = document.getElementsByTagName('blockquote');
+const author = document.getElementsByTagName('h2');
+const button = document.getElementsByTagName('button');
+const warning = document.getElementsByTagName('p');
 
 const quoteJSON = (() => {
     return fetch('./quotes.json')
@@ -11,26 +12,29 @@ const quoteJSON = (() => {
 
 const changeQuote = () => {
     quoteJSON.then((data) => {
-        const getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1)) + min)(0, data.length);
-        el[0].textContent = data[getRandomInt].quoteText;
-        a[0].textContent = data[getRandomInt].quoteAuthor;
+        const getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1) + min))(0, data.length);
+        quote[0].textContent = data[getRandomInt].quoteText;
+        author[0].textContent = data[getRandomInt].quoteAuthor;
         indexAuthorList = 0;
+        warning[0].textContent = '';
     })
 };
 changeQuote();
 
-b[0].addEventListener('click', () => changeQuote());
+button[0].addEventListener('click', () => changeQuote());
 
 let indexAuthorList = 0;
 
-a[0].addEventListener('click', () => {
+author[0].addEventListener('click', () => {
     quoteJSON.then((data) => {
         for (let z = indexAuthorList; z < data.length; z++) {
-            if (data[z].quoteAuthor === a[0].textContent && data[z].quoteText !== el[0].textContent) {
-                a[0].textContent = data[z].quoteAuthor;
-                el[0].textContent = data[z].quoteText;
+            if (data[z].quoteAuthor === author[0].textContent && data[z].quoteText !== quote[0].textContent) {
+                author[0].textContent = data[z].quoteAuthor;
+                quote[0].textContent = data[z].quoteText;
                 indexAuthorList = z;
                 break;
+            } else if (z === data.length - 1) {
+                warning[0].textContent = '*Больше цитат автора нет.';
             }
         }
     })
