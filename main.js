@@ -1,7 +1,7 @@
 'use strict';
 
 const el = document.getElementsByTagName('blockquote');
-const a = document.getElementsByTagName('p');
+const a = document.getElementsByTagName('h2');
 const b = document.getElementsByTagName('button');
 
 const quoteJSON = (() => {

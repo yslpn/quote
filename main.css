@@ -6,6 +6,17 @@ h1 {
     color: #1946ba;
 }
 
+h2 {
+    text-decoration: none;
+    color: black;
+}
+
+h2:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #1946ba;
+}
+
 div {
     max-width: 960px;
     min-height: 250px;
@@ -27,14 +38,3 @@ button {
     font-size: 14px;
     border-radius: 15px;
 }
-
-p {
-    text-decoration: none;
-    color: #1946ba;
-}
-
-p:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: #1946ba;
-} 
