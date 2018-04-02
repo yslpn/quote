@@ -29,12 +29,12 @@ author[0].addEventListener('click', () => {
     quoteJSON.then((data) => {
         for (let z = indexAuthorList; z < data.length; z++) {
             if (data[z].quoteAuthor === author[0].textContent && data[z].quoteText !== quote[0].textContent) {
-                author[0].textContent = data[z].quoteAuthor;
                 quote[0].textContent = data[z].quoteText;
+                author[0].textContent = data[z].quoteAuthor;
                 indexAuthorList = z;
                 break;
             } else if (z === data.length - 1) {
-                warning[0].textContent = '*Больше цитат автора нет.';
+                warning[0].textContent = '*There are no more quotes from this author.';
             }
         }
     })
