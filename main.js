@@ -15,17 +15,17 @@ b[0].addEventListener('click', () => {
         a[0].textContent = data[index].quoteAuthor;
     })
     index += 1;
-    forAuthorList = 0;
+    indexAuthorList = 0;
 });
 
-let forAuthorList = 0;
+let indexAuthorList = 0;
 a[0].addEventListener('click', () => {
     quoteJSON.then((data) => {
-        for (let z = forAuthorList; z < data.length; z++) {
+        for (let z = indexAuthorList; z < data.length; z++) {
             if (data[z].quoteAuthor === a[0].textContent && data[z].quoteText !== el[0].textContent) {
                 a[0].textContent = data[z].quoteAuthor;
                 el[0].textContent = data[z].quoteText;
-                forAuthorList = z;
+                indexAuthorList = z;
                 break;
             }
         }
