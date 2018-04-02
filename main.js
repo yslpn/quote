@@ -4,7 +4,7 @@ const el = document.getElementsByTagName('blockquote');
 const a = document.getElementsByTagName('p');
 const b = document.getElementsByTagName('button');
 const quoteJSON = (() => {
-    return fetch('/quotes.json')
+    return fetch('https://yslpn.github.io/quote/quotes.json')
         .then(x => x.json());
 })();
 
