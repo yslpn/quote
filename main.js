@@ -11,7 +11,7 @@ const quoteJSON = (() => {
 
 const changeQuote = () => {
     quoteJSON.then((data) => {
-        let getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1)) + min)(0, data.length);
+        const getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1)) + min)(0, data.length);
         el[0].textContent = data[getRandomInt].quoteText;
         a[0].textContent = data[getRandomInt].quoteAuthor;
         indexAuthorList = 0;
