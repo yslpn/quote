@@ -3,19 +3,24 @@
 const el = document.getElementsByTagName('blockquote');
 const a = document.getElementsByTagName('p');
 const b = document.getElementsByTagName('button');
+
 const quoteJSON = (() => {
     return fetch('./quotes.json')
         .then(x => x.json());
 })();
 
-b[0].addEventListener('click', () => {
+const changeQuote = () => {
     quoteJSON.then((data) => {
         let getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1)) + min)(0, data.length);
         el[0].textContent = data[getRandomInt].quoteText;
         a[0].textContent = data[getRandomInt].quoteAuthor;
+        indexAuthorList = 0;
     })
-    indexAuthorList = 0;
-});
+};
+
+changeQuote();
+
+b[0].addEventListener('click', () => changeQuote());
 
 let indexAuthorList = 0;
 a[0].addEventListener('click', () => {
