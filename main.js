@@ -1,40 +1,40 @@
 'use strict';
 
-const quote = document.getElementsByTagName('blockquote');
-const author = document.getElementsByTagName('h2');
-const button = document.getElementsByTagName('button');
-const warning = document.getElementsByTagName('p');
+const quote = document.getElementById('quote');
+const author = document.getElementById('author');
+const button = document.getElementById('butoon');
+const warning = document.getElementById('warning');
 
 const quoteJSON = (() => {
-    return fetch('./quotes.json')
+    return fetch('https://yslpn.github.io/quote/quotes.json')
         .then(x => x.json());
 })();
 
 const changeQuote = () => {
     quoteJSON.then((data) => {
         const getRandomInt = ((min, max) => Math.floor(Math.random() * (max - min + 1) + min))(0, data.length);
-        quote[0].textContent = data[getRandomInt].quoteText;
-        author[0].textContent = data[getRandomInt].quoteAuthor;
+        quote.textContent = data[getRandomInt].quoteText;
+        author.textContent = data[getRandomInt].quoteAuthor;
         indexAuthorList = 0;
-        warning[0].textContent = '';
+        warning.textContent = '';
     })
 };
 changeQuote();
 
-button[0].addEventListener('click', () => changeQuote());
+button.addEventListener('click', () => changeQuote());
 
 let indexAuthorList = 0;
 
-author[0].addEventListener('click', () => {
+author.addEventListener('click', () => {
     quoteJSON.then((data) => {
         for (let z = indexAuthorList; z < data.length; z++) {
-            if (data[z].quoteAuthor === author[0].textContent && data[z].quoteText !== quote[0].textContent) {
-                quote[0].textContent = data[z].quoteText;
-                author[0].textContent = data[z].quoteAuthor;
+            if (data[z].quoteAuthor === author.textContent && data[z].quoteText !== quote.textContent) {
+                quote.textContent = data[z].quoteText;
+                author.textContent = data[z].quoteAuthor;
                 indexAuthorList = z;
                 break;
             } else if (z === data.length - 1) {
-                warning[0].textContent = '*There are no more quotes from this author.';
+                warning.textContent = '*There are no more quotes from this author.';
             }
         }
     })
