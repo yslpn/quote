@@ -2,7 +2,7 @@
 
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
-const button = document.getElementById('butoon');
+const button = document.getElementById('button');
 const warning = document.getElementById('warning');
 
 const quoteJSON = (() => {
