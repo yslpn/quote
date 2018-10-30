@@ -1,3 +1,3 @@
-# Site with Quote Of the Day
+# Site with quote of the day
 
-https://yslpn.github.io/quote/
+GitHub Pages: https://yslpn.github.io/quote/
