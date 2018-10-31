@@ -6,7 +6,7 @@ const button = document.getElementById('button');
 const warning = document.getElementById('warning');
 
 const quoteJSON = (() => {
-    return fetch('https://yslpn.github.io/quote/quotes.json')
+    return fetch('https://yslpn.github.io/quote-of-the-day/quotes.json')
         .then(x => x.json());
 })();
 

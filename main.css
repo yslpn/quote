@@ -38,3 +38,8 @@ button {
     font-size: 14px;
     border-radius: 15px;
 }
+
+.hint {
+    font-size: 12px;
+    opacity: 0.5;
+}
